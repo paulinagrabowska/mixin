@@ -1,0 +1,23 @@
+// @for $i from 1 through 6 {
+//     h#{$i} {
+//         font-size: 1em;
+//         font-weight: 100;
+//     }
+// }
+
+// $group-selector: h1, h2, h3, h4, h5, h6;
+
+// #{$group-selector} {
+//     font-size: 1em;
+//     font-weight: 100;
+// }
+
+@mixin head-size($font-size) {
+    @for $i from 1 through 6 {
+        h#{$i} {
+            font-size: $font-size - ($i - 1) * 2;
+        }
+    }
+}
+
+@include head-size(40px);
